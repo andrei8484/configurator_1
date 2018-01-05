@@ -5,6 +5,7 @@ const products = [
     category: 'Категория 1',
     color: 'Цвет 1',
     parameter: 'Параметр 1',
+    img: 'product.jpg',
   },
   {
     name: 'Название 2',
@@ -12,6 +13,7 @@ const products = [
     category: 'Категория 1',
     color: 'Цвет 2',
     parameter: 'Параметр 2',
+    img: 'product.jpg',
   },
   {
     name: 'Название 3',
@@ -19,6 +21,7 @@ const products = [
     category: 'Категория 1',
     color: 'Цвет 3',
     parameter: 'Параметр 3',
+    img: 'product.jpg',
   },
   {
     name: 'Название 4',
@@ -26,6 +29,7 @@ const products = [
     category: 'Категория 2',
     color: 'Цвет 1',
     parameter: 'Параметр 4',
+    img: 'product.jpg',
   },
   {
     name: 'Название 5',
@@ -33,5 +37,6 @@ const products = [
     category: 'Категория 2',
     color: 'Цвет 2',
     parameter: 'Параметр 1',
+    img: 'product.jpg',
   }
 ];

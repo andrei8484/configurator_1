@@ -155,15 +155,18 @@ function filterProducts() {
 
 function renderProducts(products) {
   const container = $('.products');
+  container.html('');
   for (let i = 0; i < products.length; i++) {
     const product = products[i];
-    const item = $('<div>', { class: 'col-md-4' });
+    const item = $('<div>', { class: 'col-md-4 product' });
+    const img = $('<img>', { src: `./public/img/${product.img}`, class: 'product-image' });
     const name = $('<div>', { text: product.name });
     const type = $('<div>', { text: `Тип: ${product.type}` });
     const category = $('<div>', { text: 'Категория: ' + product.category });
     const color = $('<div>', { text: `Цвет: ${product.color}` });
     const parameter = $('<div>', { text: `Параметр: ${product.parameter}` });
     item
+      .append(img)
       .append(name)
       .append(type)
       .append(category)
@@ -172,3 +175,5 @@ function renderProducts(products) {
     container.append(item);
   }
 }
+
+filterProducts();
