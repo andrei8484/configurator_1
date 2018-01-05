@@ -27,6 +27,8 @@ function populateRadios(className, options) {
   for (let i = 0; i < options.length; i++) {
     //  Уникальный ID
     const id = className + '' + i;
+    //  Обёртка для radio
+    const radioContainer = $('<div>', { class: 'radio' });
     //  Создание radio-button
     const radio = $('<input>', {
       type: 'radio',
@@ -37,12 +39,13 @@ function populateRadios(className, options) {
     //  Создание label
     const label = $('<label>', {
       text: options[i],
-      for: id,
     });
-    //  Вставка radio и label в container
-    container
-      .append(label)
-      .append(radio);
+    //  Вставляем radio ПЕРЕД чем-то ещё
+    label.prepend(radio);
+    //  Вставляем label в div.radio
+    radioContainer.append(label);
+    //  Вставка в контейнер
+    container.append(radioContainer);
   }
 }
 
@@ -154,7 +157,7 @@ function renderProducts(products) {
   const container = $('.products');
   for (let i = 0; i < products.length; i++) {
     const product = products[i];
-    const item = $('<div>');
+    const item = $('<div>', { class: 'col-md-4' });
     const name = $('<div>', { text: product.name });
     const type = $('<div>', { text: `Тип: ${product.type}` });
     const category = $('<div>', { text: 'Категория: ' + product.category });
